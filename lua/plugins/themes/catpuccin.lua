@@ -44,6 +44,7 @@ return {
                 nvimtree = true,
                 treesitter = true,
                 notify = false,
+                mason = true,
                 --[[ mini = {
                     enabled = true,
                     indentscope_color = "",
