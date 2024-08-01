@@ -4,6 +4,7 @@ vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 vim.cmd("set number")
 vim.g.mapleader = " "
+vim.o.termguicolors = false
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -19,6 +20,9 @@ vim.opt.laststatus = 2
 vim.opt.autowrite = true
 vim.opt.cursorline = true
 vim.opt.autoread = true
+
+vim.opt.smartcase = true
+vim.opt.ignorecase = true
 
 -- KEYS
 -- ease of use
