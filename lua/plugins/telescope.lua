@@ -5,6 +5,7 @@ return {
         dependencies = {
             'nvim-lua/plenary.nvim',
             'jvgrootveld/telescope-zoxide',
+            'sharkdp/fd',
         },
         config = function()
             local builtin = require("telescope.builtin")
@@ -19,6 +20,14 @@ return {
         config = function()
             local z_utils = require("telescope._extensions.zoxide.utils")
             require("telescope").setup {
+                defaults = {
+                    layout_strategy = "vertical",
+                    layout_config = {
+                        vertical = {
+                            width = 0.8,
+                        },
+                    },
+                },
                 extensions = {
                     ["ui-select"] = {
                         require("telescope.themes").get_dropdown {

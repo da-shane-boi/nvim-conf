@@ -49,8 +49,9 @@ return {
 			lsp_config.markdown_oxide.setup({ capabilities = capabilities })
 
             vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, {})
-            vim.keymap.set("n", "I", vim.lsp.buf.hover, {})
+            vim.keymap.set("n", "<leader>i", vim.lsp.buf.hover, {})
             vim.keymap.set({ "n", "v" }, "<C-a>", vim.lsp.buf.code_action, {})
+            vim.keymap.set({ "n", "v" }, "<leader>lr", ":LspRestart<CR>", {})
             -- vim.keymap.set('n', '<leader>b', vim.diagnostic.open_float(), {})
         end,
     },
