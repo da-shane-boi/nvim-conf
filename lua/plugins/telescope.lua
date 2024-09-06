@@ -4,7 +4,7 @@ return {
         tag = '0.1.5',
         dependencies = {
             'nvim-lua/plenary.nvim',
-            'jvgrootveld/telescope-zoxide',
+            -- 'jvgrootveld/telescope-zoxide',
             'sharkdp/fd',
         },
         config = function()
@@ -18,7 +18,7 @@ return {
     {
         "nvim-telescope/telescope-ui-select.nvim",
         config = function()
-            local z_utils = require("telescope._extensions.zoxide.utils")
+            -- local z_utils = require("telescope._extensions.zoxide.utils")
             require("telescope").setup {
                 defaults = {
                     layout_strategy = "vertical",
@@ -33,24 +33,24 @@ return {
                         require("telescope.themes").get_dropdown {
                         }
                     },
-                    zoxide = {
-                        prompt_title = "[ Walking on the shoulders of TJ ]",
-                        mappings = {
-                            default = {
-                                after_action = function(selection)
-                                    print("Update to (" .. selection.z_score .. ") " .. selection.path)
-                                end
-                            },
-                            ["<C-u>"] = {
-                                before_action = function(selection) print("before C-u") end,
-                                keepinsert = true,
-                                action = function(selection)
-                                    vim.cmd.edit(selection.path)
-                                end
-                            },
-                            ["<C-q>"] = { action = z_utils.create_basic_command("split") },
-                        },
-                    }
+                    -- zoxide = {
+                    --     prompt_title = "[ Walking on the shoulders of TJ ]",
+                    --     mappings = {
+                    --         default = {
+                    --             after_action = function(selection)
+                    --                 print("Update to (" .. selection.z_score .. ") " .. selection.path)
+                    --             end
+                    --         },
+                    --         ["<C-u>"] = {
+                    --             before_action = function(selection) print("before C-u") end,
+                    --             keepinsert = true,
+                    --             action = function(selection)
+                    --                 vim.cmd.edit(selection.path)
+                    --             end
+                    --         },
+                    --         ["<C-q>"] = { action = z_utils.create_basic_command("split") },
+                    --     },
+                    -- }
                 }
             }
             require("telescope").load_extension("ui-select")
