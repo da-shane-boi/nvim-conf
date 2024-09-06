@@ -4,8 +4,8 @@ return {
     main = "ibl",
     opts = {
         indent = {
-            char = "┊",
-            -- char = "U+2588",
+            -- char = "┊",
+            char = '┃',
         },
         scope = { enabled = true },
     },
