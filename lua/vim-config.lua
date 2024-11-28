@@ -5,12 +5,13 @@ vim.cmd("set shiftwidth=4")
 vim.cmd("set number")
 vim.g.mapleader = " "
 vim.o.termguicolors = false
+vim.highlight.priorities.semantic_tokens = 95
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 10
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 
@@ -23,6 +24,7 @@ vim.opt.autoread = true
 
 vim.opt.smartcase = true
 vim.opt.ignorecase = true
+
 --
 -- Clipboard configuration
 vim.opt.clipboard:append("unnamedplus")
@@ -59,5 +61,4 @@ vim.keymap.set("n", "<A-Down>", ":res -5<CR>")       -- vertically by -5
 vim.keymap.set("n", "<S-l>", "<C-w>l") -- Switch to window on the right
 vim.keymap.set("n", "<S-h>", "<C-w>h") -- Switch to window on the left
 vim.keymap.set("n", "<S-k>", "<C-w>k") -- Switch to window above
-vim.
-keymap.set("n", "<S-j>", "<C-w>j") -- Switch to window below
+vim.keymap.set("n", "<S-j>", "<C-w>j") -- Switch to window below
