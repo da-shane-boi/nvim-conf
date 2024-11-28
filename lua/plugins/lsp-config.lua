@@ -20,16 +20,16 @@ return {
             require("mason-lspconfig").setup({
                 -- Install necessary LSP
                 ensure_installed = {
+                    "jdtls",
                     "lua_ls",
                     "emmet_ls",
                     "lemminx",
                     "bashls",
                     "pyright",
-                    "tsserver",
+                    -- "tsserver",
                     "cssls",
                     "html",
                     "markdown_oxide", -- Markdown lsp
-                    "jdtls",
                 },
             })
         end,
@@ -53,6 +53,7 @@ return {
             vim.keymap.set("n", "<leader>i", vim.lsp.buf.hover, {})
             vim.keymap.set({ "n", "v" }, "<C-a>", vim.lsp.buf.code_action, {})
             vim.keymap.set({ "n", "v" }, "<leader>lr", ":LspRestart<CR>", {})
+            vim.keymap.set({ "n", "v" }, "<leader>li", ":LspInfo<CR>", {})
             -- vim.keymap.set('n', '<leader>b', vim.diagnostic.open_float(), {})
         end,
     },
