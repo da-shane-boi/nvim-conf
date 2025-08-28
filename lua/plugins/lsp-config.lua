@@ -25,11 +25,16 @@ return {
                     "emmet_ls",
                     "lemminx",
                     "bashls",
-                    "pyright",
-                    -- "tsserver",
+                    "basedpyright",
+                    "ts_ls",
                     "cssls",
                     "html",
                     "markdown_oxide", -- Markdown lsp
+                    "yamlls",
+                    "gitlab_ci_ls",
+                    -- "grammarly",
+                    "ansiblels",
+                    "powershell_es"
                 },
             })
         end,
@@ -48,6 +53,7 @@ return {
             lsp_config.lua_ls.setup({ capabilities = capabilities })
             lsp_config.jdtls.setup({ capabilities = capabilities })
             lsp_config.markdown_oxide.setup({ capabilities = capabilities })
+            lsp_config.yamlls.setup({ capabilities = capabilities })
 
             vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, {})
             vim.keymap.set("n", "<leader>i", vim.lsp.buf.hover, {})
