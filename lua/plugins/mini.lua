@@ -36,7 +36,24 @@ return {
             require("mini.surround").setup({
                 -- Add custom surroundings to be used on top of builtin ones. For more
                 -- information with examples, see `:h MiniSurround.config`.
-                custom_surroundings = nil,
+                custom_surroundings = {
+                  -- Make `)` insert parts with spaces. `input` pattern stays the same.
+                  [')'] = { output = { left = '(', right = ')' } },
+
+                  -- Use function to compute surrounding info
+                  ['*'] = {
+                    input = function()
+                      local n_star = MiniSurround.user_input('Number of * to find')
+                      local many_star = string.rep('%*', tonumber(n_star) or 1)
+                      return { many_star .. '().-()' .. many_star }
+                    end,
+                    output = function()
+                      local n_star = MiniSurround.user_input('Number of * to output')
+                      local many_star = string.rep('*', tonumber(n_star) or 1)
+                      return { left = many_star, right = many_star }
+                    end,
+                  },
+                },
 
                 -- Duration (in ms) of highlight when calling `MiniSurround.highlight()`
                 highlight_duration = 500,
